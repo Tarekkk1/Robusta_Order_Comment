@@ -1,0 +1,13 @@
+type Mutation {
+    setOrderComment(input: OrderCommentInput!): OrderCommentOutput @resolver(class: "StackExchange\\OrderComment\\Model\\Resolver\\OrderComment") @doc(description:"Set comment for the order")
+}
+
+input OrderCommentInput {
+    cart_id: String!
+    comment: String!
+}
+
+type OrderCommentOutput {
+    success: Boolean!
+    message: String @doc(description:"Success or failure message")
+}

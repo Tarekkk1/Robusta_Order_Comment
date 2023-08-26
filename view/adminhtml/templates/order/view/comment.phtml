@@ -1,0 +1,12 @@
+<?php
+/** @var \Magento\Sales\Block\Adminhtml\Order\View\Info $block */
+$order = $block->getOrder();
+$comment = $order->getData('comment');
+if ($comment):
+?>
+<div class="order-information">
+    <div class="admin__page-section-item-content">
+        <strong><?= __('Customer Comment') ?>:</strong> <?= $block->escapeHtml($comment) ?>
+    </div>
+</div>
+<?php endif; ?>
